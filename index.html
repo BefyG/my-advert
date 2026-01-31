@@ -2,48 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio Using HTML & CSS</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BefyG Portfolio</title>
+  <link rel="shortcut icon" href="portfolio-images/tyler-clemmensen-c7Gay8ttJS0-unsplash.jpg" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background: linear-gradient(to right, #1f2937, #111827); color: #fff; overflow-x: hidden; }
+
+    /* Floating circles */
+    .floating-circle { position: absolute; border-radius: 50%; opacity: 0.15; background: #ff5c5c; animation: float 10s infinite ease-in-out; }
+    @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-50px) translateX(30px); } }
+    .floating-circle:nth-child(1) { width: 150px; height: 150px; top: 20%; left: 5%; }
+    .floating-circle:nth-child(2) { width: 100px; height: 100px; top: 70%; left: 80%; animation-delay: 2s; }
+    .floating-circle:nth-child(3) { width: 200px; height: 200px; top: 40%; left: 50%; animation-delay: 4s; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 50px; min-height: 100vh; position: relative; }
+    .header-left-side { max-width: 550px; }
+    .header-left-side h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 10px; }
+    .header-left-side h2 { font-weight: 300; font-size: 1.6rem; margin-bottom: 20px; color: #fbbf24; }
+    .header-left-side p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.6; color: #d1d5db; }
+
+    .button-group button { margin: 5px; padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: transform 0.3s, background 0.3s; background: #ff5c5c; color: #fff; }
+    .button-group button:hover { transform: translateY(-3px) scale(1.05); background: #fbbf24; color: #111827; }
+
+    .header-right-side img { width: 400px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); transition: transform 0.5s; }
+    .header-right-side img:hover { transform: scale(1.05) rotate(2deg); }
+
+    footer { text-align: center; padding: 30px; color: #d1d5db; }
+    a { text-decoration: none; color: inherit; }
+  </style>
 </head>
 
 <body>
+
+  <!-- Floating circles -->
+  <div class="floating-circle"></div>
+  <div class="floating-circle"></div>
+  <div class="floating-circle"></div>
+
+  <!-- HEADER -->
   <header>
     <div class="header-left-side">
-      <h1>
-        Hello<br />
-        I`m Befon
-      </h1>
-      <h2>- UI / UX DESIGNER</h2>
+      <h1>Hey there! 👋<br>I'm Befon</h1>
+      <h2>Friendly UI/UX Designer & Web Dev</h2>
       <p>
-        I am an experinced and well trained cadet as it comes to the field of coding 
-        I am verified by big companies such as Activtion 
+        I love turning ideas into experiences that feel smooth, fun, and professional. Let's make something amazing together! 🚀
       </p>
-      
-      <h1>My specialties are:</h1>
-      <button>Communicate</button>
-      <button>Hack</button>
-      <br />
-      <br />
-      <button>Crack</button>
-      <button>Graphic design</button> <br />
-      <br />
-      <button>View work</button>
-      <button>Contact</button> <br />
-      <br />
-      <button class="btn">Hire now</button>
-      <h3>Contact are: anadies22@gmail.com</h3>
-      <h3>Github account:BefyG</h3>
-      <h3>Copyright © 2023 Befon ...THE GOAT</h3>
+
+      <h3>What I can do for you 💡</h3>
+      <div class="button-group">
+        <button>💻 Web Apps</button>
+        <button>🌐 Websites</button>
+        <button>🎨 Graphics</button>
+        <button>🔒 Security / Fun Hacks</button>
+      </div>
+      <br>
+      <div class="button-group">
+        <a href="portfolio.html"><button>Check My Work</button></a>
+        <a href="mailto:anadies22@gmail.com"><button>Say Hi</button></a>
+        <button onclick="window.location.href='hire.html'">Let's Work Together</button>
+      </div>
+      <br>
+      <h3>📧 anadies22@gmail.com</h3>
+      <h3>🐙 GitHub: <a href="https://github.com/BefyG" target="_blank" style="color:#fbbf24;">BefyG</a></h3>
     </div>
+
     <div class="header-right-side">
+      <img src="portfolio-images/profile.jpg" alt="Befon Portrait">
     </div>
   </header>
 
+  <footer>
+    &copy; <span id="year"></span> Befon ...THE GOAT
+  </footer>
 
-
-
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
